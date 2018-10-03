@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     
     # Should work if the current_user is authenticated.
     def index
-      render json: {status: 200, msg: 'Logged-in'}
+      render json: {status: 200, msg: 'Logged-in'+current_user.username}
     end
     
     # Call this method to check if the user is logged-in.
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
         end
     end
 
-    
+
     private
     
     # Setting up strict parameters for when we add account creation.
