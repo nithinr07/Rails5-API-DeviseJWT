@@ -15,8 +15,6 @@ class UsersController < ApplicationController
       render json: current_user
     end
     
-
-    
     # Adding a method to check if current_user can update itself. 
     # This uses our UserModel method.
     def authorize
