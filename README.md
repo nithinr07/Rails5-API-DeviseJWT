@@ -1,24 +1,34 @@
-# README
+Rails5-API-Knock-JWT
+========
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Simple API using authentication with Knock gem and [JWT](https://jwt.io/)
 
-Things you may want to cover:
+JSON Web Tokens are an open, industry standard [RFC 7519](https://tools.ietf.org/html/rfc7519) method for representing claims securely between two parties.
 
-* Ruby version
+Compatibility
+-------------
 
-* System dependencies
+* Ruby 2.5.1
 
-* Configuration
+* PostgreSQL 10.1
 
-* Database creation
+* Rails 5.2.1
 
-* Database initialization
+Setup
+------------
 
-* How to run the test suite
+After forked and cloned the repository, run bundle:
 
-* Services (job queues, cache servers, search engines, etc.)
+`bundle install`
 
-* Deployment instructions
+Create the `pguser1` role on your postgresql:
 
-* ...
+`CREATE ROLE pguser1 WITH SUPERUSER CREATEDB CREATEROLE LOGIN;`
+
+Create Database and tables:
+
+`bin/setup`
+
+Start the Rails application
+
+`rails s`
