@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-      # Necessary to authenticate.
+  has_and_belongs_to_many :courses
+  # Necessary to authenticate.
   has_secure_password
   
   # Basic password validation, configure to your liking.

@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class V1::UsersController < ApplicationController
     before_action :authenticate_user,  only: [:index, :current, :update]
     before_action :authorize_as_admin, only: [:destroy]
     before_action :authorize,          only: [:update]
@@ -14,7 +14,7 @@ class UsersController < ApplicationController
       current_user.update!(last_login: Time.now)
       render json: current_user
     end
-    
+
     # Adding a method to check if current_user can update itself. 
     # This uses our UserModel method.
     def authorize
@@ -43,11 +43,14 @@ class UsersController < ApplicationController
         end
     end
 
-
+    def course_list
+        
+    end
+    
     private
     
     # Setting up strict parameters for when we add account creation.
     def user_params
-      params.require(:user).permit(:username, :email, :password, :password_confirmation)
+      params.require(:user).permit(:username, :email, :phone_number, :school_name, :password, :password_confirmation)
     end
 end
